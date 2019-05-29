@@ -1,0 +1,219 @@
+:root {
+  --main-md-color: #ff5722;
+}
+
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 300;
+	src: local("roboto light"), url("fonts/roboto/roboto-300.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	src: local("roboto regular"), url("fonts/roboto/roboto-400.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 500;
+	src: local("roboto medium"), url("fonts/roboto/roboto-500.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 700;
+	src: local("roboto bold"), url("fonts/roboto/roboto-700.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 900;
+	src: local("roboto black"), url("fonts/roboto/roboto-900.woff2") format("woff2");
+}
+
+/* material design button-click "ripple" effect */
+@keyframes md-ripple {
+	0% {
+		transform: scale(0, 0);
+		opacity: 1;
+	}
+	50% {
+		transform: scale(25, 25);
+		opacity: .5;
+	}
+	100% {
+		opacity: 0;
+		transform: scale(25, 25);
+	}
+}
+
+
+html,
+body {
+	font-family: Roboto, 'Trebuchet MS', arial, helvetica, sans-serif;
+	font-weight: 400;
+	background-color: #fafafa;
+	color: #212121;
+	padding: 0;
+	margin: 0;
+}
+body {
+	font-size: 1em;
+	line-height: 1.4;
+}
+
+a { text-decoration: none; color: inherit; }
+a:hover { text-decoration: underline; }
+
+
+
+
+/*===========================================================================*/
+
+#top-nav {
+	background: #00C853;
+	min-height: 64px;
+	display: flex;
+	align-items: center;
+	padding: 0 15px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+	font-weight: 500;
+	font-size: 1em;
+}
+
+#top-nav .logo {
+	height: 42px;
+	width: 42px;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+#top-nav .logo img {
+	vertical-align: middle;
+	height: 42px;
+	width: 42px;
+	border-radius: 50%;
+	box-shadow: 0 0 3px black;
+}
+
+#top-nav > .navbarlinks {
+	padding-left: 20px;
+	flex: 1;
+}
+
+/* ========================================================= */
+.main-form {
+	max-width: 800px;
+	margin: 20px auto 50px;
+	padding: 20px;
+}
+
+.main-form .text {
+	padding: 5px 10px;
+	border: 1px solid silver;
+	border-radius: 2px;
+	text-align: center;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.main-form .centrer {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	margin: auto auto;
+}
+
+.main-form ul {
+	text-align: left;
+}
+
+.main-form .button {
+	color: white;
+	font-weight: 500;
+	vertical-align: middle;
+	padding: 6px 12px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+	border-radius: 2px;
+	border: 0px solid transparent;
+	min-width: 100px;
+	text-transform: uppercase;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+
+.main-form .button:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 10px;
+	height: 10px;
+	background: rgba(255, 255, 255, .5);
+	opacity: 0;
+	border-radius: 100%;
+	transform: scale(1, 1) translate(-50%);
+}
+
+.main-form .button:focus:hover::after {
+	animation: md-ripple 1s ease-out;
+}
+
+
+.main-form .button-submit {
+	min-width: 140px;
+	background: #2196f3;
+}
+
+.main-form .button-other {
+	background: white;
+	color: #555;
+	margin-right: 5px;
+	transition: box-shadow .2s;
+	box-shadow: none;
+}
+
+.main-form .button-other:hover {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.main-form .notes {
+	margin-top: 70px;
+	padding-top: 10px;
+	border-top: solid 1px silver;
+	color:gray;
+	font-size: 90%;
+	text-align: right;
+}
+
+.main-form .notes a {
+	color: #444;
+}
+.main-form .notes p {
+	margin: 0;
+}
+
+/* ========================================================= */
+
+#footer {
+	font-size: 90%;
+	text-align: center;
+	margin: 30px auto 40px;
+}
+
+
+@media (max-width: 800px) {
+
+.main-form {
+	padding: 5px;
+}
+
+}
